@@ -1,5 +1,13 @@
 defmodule Rumbl.UserController do
   use Rumbl.Web, :controller
+  alias Rumbl.User
+
+  # changeset = receives struct and controller parameter and returns Ecto.Changeset.
+  # Manage record changes, cast parameters and perform validations.
+  def new(conn, _params) do
+    changeset = User.changeset(%User{})
+    render conn, "new.html", changeset: changeset
+  end
 
   def index(conn, _params) do
     users = Repo.all(Rumbl.User)

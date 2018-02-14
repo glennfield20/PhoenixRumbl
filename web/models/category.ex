@@ -3,7 +3,6 @@ defmodule Rumbl.Category do
 
   schema "categories" do
     field :name, :string
-
     timestamps()
   end
 
